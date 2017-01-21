@@ -1,0 +1,18 @@
+[user]
+	name = Henrik Holst
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[credential]
+	helper = cache
+[push]
+	default = simple
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	last = log -1 HEAD
+	exec = "! "
+	root = rev-parse --show-toplevel
