@@ -1,6 +1,6 @@
 #!/bin/sh
 DOTHOME="$(readlink -f `dirname $0`)"
-for FILE in bashrc gitconfig vimrc tmux.conf redshift.conf Xresources bash_aliases toprc
+for FILE in bashrc gitconfig vimrc tmux.conf redshift.conf Xresources bash_aliases toprc config/nvim/init.vim
 do
 	if ! test -f ${DOTHOME}/${FILE}; then
 		continue
