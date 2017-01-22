@@ -1,5 +1,7 @@
 [user]
 	name = Henrik Holst
+[core]
+	editor = nvim
 [color]
 	diff = auto
 	status = auto
@@ -15,3 +17,13 @@
 	last = log -1 HEAD
 	exec = "! "
 	root = rev-parse --show-toplevel
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$REMOTE"
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
