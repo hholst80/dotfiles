@@ -41,7 +41,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias tmux='tmux -2u'
-alias vi=nvim
+alias vi=$EDITOR
 alias dm=docker-machine
 alias dc=docker-compose
 alias Unity=/opt/Unity/Editor/Unity
@@ -51,11 +51,15 @@ alias Unity=/opt/Unity/Editor/Unity
 # PS1='\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
 function prompt_command() {
 	PS1='\n'
+	# PS1+='\[\033[1m\u\]\[\033[36m\[\033[0m@\]\[\033[0m\]\[\033[32m\h\] \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]  '
+	PS1+='\[\033[32m\]\u@\h\[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\] '
 	if ! test -z $DOCKER_MACHINE_NAME
 	then
-		PS1+=$(printf "\[\033[33m%*s\r\[\033[0m" $(expr $(tput cols) + 12) "\[\033[36m[$DOCKER_MACHINE_NAME]\]")
+		# PS1+=$(printf "\[\033[33m%*s\r\[\033[0m" $(expr $(tput cols) + 12) "\[\033[36m[$DOCKER_MACHINE_NAME]\]")
+		# PS1+='[\[\033[36m$DOCKER_MACHINE_NAME\]\[\033[0m\]]'
+		PS1+='\[\033[1m\]\[\033[36m[$DOCKER_MACHINE_NAME]\]\[\033[0m\]'
 	fi
-	PS1+='\u\[\033[36m\]@\033[0m\]\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+	PS1+='\n\[\033[1m\]$\[\033[0m\] '
 }
 PROMPT_COMMAND=prompt_command
 
@@ -66,6 +70,11 @@ PROMPT_COMMAND=prompt_command
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Post fixes
+
+if test -f /etc/bash_completion
+then
+	source /etc/bash_completion
+fi
 
 if ! declare -F __git_ps1 > /dev/null
 then
