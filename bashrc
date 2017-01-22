@@ -1,31 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-# We use preexec and precmd hook functions for Bash
-# If you have anything that's using the Debug Trap or PROMPT_COMMAND 
-# change it to use preexec or precmd
-# See also https://github.com/rcaloras/bash-preexec
-
-if [ $SHLVL == 1 ]
-then
-	for __editor in nvim vim vi ed
-	do
-		if which $__editor >& /dev/null
-		then
-			export EDITOR=$__editor
-			break
-		fi
-	done
-
-	for __path in /efs/bin $HOME/bin
-	do
-		if [ -d $__path ] ## TODO: check if already in PATH
-		then
-			export PATH="$__path:$PATH"
-		fi
-	done
-fi
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
