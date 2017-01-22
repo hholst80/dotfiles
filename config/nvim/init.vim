@@ -37,3 +37,7 @@ colorscheme gruvbox
 set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
 set lazyredraw                          " Speed up redrawing.
 set background=dark
+
+" Keyboard mappings
+nmap <silent> <leader>h :set hls!<cr>
+nnoremap <silent> <Leader>z :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
