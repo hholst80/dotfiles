@@ -1,4 +1,4 @@
-for __editor in nvim vim vi ed
+for __editor in nvim vim vi nano
 do
 	if which $__editor >& /dev/null
 	then
@@ -16,3 +16,5 @@ do
 done
 # added by Miniconda3 4.2.12 installer
 export PATH="/home/holst/miniconda3/bin:$PATH"
+
+source .bashrc
