@@ -15,6 +15,8 @@ Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-unimpaired'
 
+Plug 'https://github.com/klen/python-mode'
+
 " Initialize plugin system
 call plug#end()
 
@@ -37,6 +39,19 @@ colorscheme gruvbox
 set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
 set lazyredraw                          " Speed up redrawing.
 set background=dark
+
+" ===============
+" Pymode settings
+" ===============
+
+let g:pymode_rope = 0
+let g:pymode_syntax = 0
+let g:pymode_lint_write = 1
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_complete_on_dot = 0
+set completeopt-=preview
+
+autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2
 
 " Keyboard mappings
 nnoremap <leader>s :GitGutterStageHunk<cr>
