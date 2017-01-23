@@ -1,12 +1,13 @@
 #!/bin/sh
 DOTHOME="$(readlink -f `dirname $0`)"
-for FILE in profile bashrc gitconfig vimrc tmux.conf redshift.conf Xresources bash_aliases toprc config/nvim/init.vim
+for FILE in profile bashrc gitconfig vimrc tmux.conf redshift.conf Xresources bash_aliases toprc config/nvim/* config/mc/*
 do
 	if ! test -f ${DOTHOME}/${FILE}; then
 		continue
 	fi
 	TARGET=${HOME}/.${FILE}
 	if ! test -s ${TARGET}; then
-		ln -sfv ${DOTHOME}/${FILE} ${HOME}/.${FILE}
+		mkdir -p $(dirname $TARGET)
+		ln -sfv ${DOTHOME}/${FILE} $TARGET
 	fi
 done
