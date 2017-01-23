@@ -53,11 +53,15 @@ function prompt_command() {
 	PS1='\n'
 	# PS1+='\[\033[1m\u\]\[\033[36m\[\033[0m@\]\[\033[0m\]\[\033[32m\h\] \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]  '
 	PS1+='\[\033[32m\]\u@\h\[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\] '
+	if ! test -z $CONDA_DEFAULT_ENV
+	then
+		PS1+='\[\033[1m\]\[\033[31m[conda:$CONDA_DEFAULT_ENV]\]\[\033[0m\] '
+	fi
 	if ! test -z $DOCKER_MACHINE_NAME
 	then
 		# PS1+=$(printf "\[\033[33m%*s\r\[\033[0m" $(expr $(tput cols) + 12) "\[\033[36m[$DOCKER_MACHINE_NAME]\]")
 		# PS1+='[\[\033[36m$DOCKER_MACHINE_NAME\]\[\033[0m\]]'
-		PS1+='\[\033[1m\]\[\033[36m[$DOCKER_MACHINE_NAME]\]\[\033[0m\]'
+		PS1+='\[\033[1m\]\[\033[36m[docker:$DOCKER_MACHINE_NAME]\]\[\033[0m\]'
 	fi
 	PS1+='\n\[\033[1m\]$\[\033[0m\] '
 }
