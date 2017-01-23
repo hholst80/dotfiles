@@ -39,5 +39,6 @@ set lazyredraw                          " Speed up redrawing.
 set background=dark
 
 " Keyboard mappings
+nnoremap <leader>s :GitGutterStageHunk<cr>
 nmap <silent> <leader>h :set hls!<cr>
 nnoremap <silent> <Leader>z :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
