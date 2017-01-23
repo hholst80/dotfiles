@@ -7,7 +7,7 @@ do
 	fi
 done
 
-for __path in /efs/bin $HOME/.local/bin $HOME/bin $HOME/miniconda3/bin
+for __path in /efs/bin $HOME/.local/bin $HOME/bin $HOME/miniconda3/bin $HOME/anaconda3/bin
 do
 	if test -d $__path # TODO: check if already in PATH
 	then
@@ -17,5 +17,5 @@ done
 
 if ! test -z $BASH_VERSION
 then
-	source .bashrc
+	source $HOME/.bashrc
 fi
