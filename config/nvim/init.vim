@@ -54,6 +54,6 @@ set completeopt-=preview
 autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2
 
 " Keyboard mappings
-nnoremap <leader>s :GitGutterStageHunk<cr>
 nmap <silent> <leader>h :set hls!<cr>
 nnoremap <silent> <Leader>z :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
+nnoremap <silent> <F10> :qall<CR>
