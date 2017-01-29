@@ -6,16 +6,23 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+
+" colorschemes
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
+
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vim-scripts/jpythonfold.vim'
 
 Plug 'tpope/vim-unimpaired'
-
 Plug 'https://github.com/klen/python-mode'
+
+" statusbar
+Plug 'vim-airline/vim-airline'
+" Plug 'aim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
@@ -33,12 +40,16 @@ autocmd FileType python setlocal completeopt-=preview
 " let g:SimpylFold_fold_import = 0
 
 set termguicolors
-colorscheme gruvbox
+set background=dark
+" colorscheme gruvbox
+colorscheme base16-chalk
 
 " Vim backport
 set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
 set lazyredraw                          " Speed up redrawing.
-set background=dark
+set cursorline
+set number
+set list
 
 " ===============
 " Pymode settings
