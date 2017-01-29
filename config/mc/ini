@@ -120,7 +120,7 @@ linux=
 
 [Panels]
 show_mini_info=true
-kilobyte_si=false
+kilobyte_si=true
 mix_all_files=false
 show_backups=true
 show_dot_files=true
@@ -137,6 +137,8 @@ permission_mode=false
 torben_fj_mode=false
 quick_search_mode=2
 select_flags=6
+
+simple_swap=false
 
 [FindFile]
 file_case_sens=true
