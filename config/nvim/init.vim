@@ -50,6 +50,8 @@ set lazyredraw                          " Speed up redrawing.
 set cursorline
 set number
 set list
+set scrolloff=10
+set virtualedit=block
 
 " ===============
 " Pymode settings
@@ -63,8 +65,12 @@ let g:pymode_rope_complete_on_dot = 0
 set completeopt-=preview
 
 autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType python setlocal colorcolumn=80
+autocmd FileType python setlocal textwidth=79
 
 " Keyboard mappings
+
 nmap <silent> <leader>h :set hls!<cr>
 nnoremap <silent> <Leader>z :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
 nnoremap <silent> <F10> :qall<CR>
+nnoremap Y y$
