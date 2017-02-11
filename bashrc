@@ -22,18 +22,21 @@ HISTFILESIZE=2000
 # Aliases
 
 alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias tmux='tmux -2u'
-alias vi=$EDITOR
+alias i=ipython
+alias o='octave-cli -q --traditional'
+alias t='tmux -2u'
+alias v=$EDITOR
+alias d=docker
 alias dm=docker-machine
 alias dc=docker-compose
+# EA specifics
+alias tf="source activate tensorflow"
 alias Unity=/opt/Unity/Editor/Unity
 
 # prompt
@@ -56,7 +59,7 @@ function prompt_command() {
 	PS1+='\n\[\033[1m\]$\[\033[0m\] '
 }
 
-PROMPT_COMMAND=prompt_command
+PROMPT_COMMAND="history -a;history -c;history -r;prompt_command"
 
 # Functions
 
