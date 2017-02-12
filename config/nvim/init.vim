@@ -6,16 +6,23 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+
+" colorschemes
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
+
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vim-scripts/jpythonfold.vim'
 
 Plug 'tpope/vim-unimpaired'
-
 Plug 'https://github.com/klen/python-mode'
+
+" statusbar
+Plug 'vim-airline/vim-airline'
+" Plug 'aim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
@@ -33,12 +40,18 @@ autocmd FileType python setlocal completeopt-=preview
 " let g:SimpylFold_fold_import = 0
 
 set termguicolors
-colorscheme gruvbox
+set background=dark
+" colorscheme gruvbox
+colorscheme base16-chalk
 
 " Vim backport
 set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
 set lazyredraw                          " Speed up redrawing.
-set background=dark
+set cursorline
+set number
+set list
+set scrolloff=10
+set virtualedit=block
 
 " ===============
 " Pymode settings
@@ -52,8 +65,12 @@ let g:pymode_rope_complete_on_dot = 0
 set completeopt-=preview
 
 autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType python setlocal colorcolumn=80
+autocmd FileType python setlocal textwidth=79
 
 " Keyboard mappings
+
 nmap <silent> <leader>h :set hls!<cr>
 nnoremap <silent> <Leader>z :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
 nnoremap <silent> <F10> :qall<CR>
+nnoremap Y y$
