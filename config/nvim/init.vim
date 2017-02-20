@@ -1,9 +1,13 @@
-" 1) Install vim-plug package manager:
+" 1) Install neovim following the instructions here:
+"
+" https://github.com/neovim/neovim/wiki/Installing-Neovim
+"
+" 2) Install vim-plug package manager:
 "
 " curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 " https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
-" 2) Install required Python packages:
+" 3) Install required Python packages:
 "
 " pip install --upgrade neovim jedi
 
