@@ -1,4 +1,10 @@
-" required packages:
+" 1) Install vim-plug package manager:
+"
+" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
+" 2) Install required Python packages:
+"
 " pip install --upgrade neovim jedi
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
