@@ -41,18 +41,22 @@ call plug#end()
 " let g:python3_host_prog = '/home/hholst/anaconda3/envs/tensorflow/bin/python3'
 
 let g:deoplete#enable_at_startup = 1
-
 let g:jedi#show_call_signatures = 2
+" let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
+let g:pymode_lint_checkers = ['pyflakes', 'mccabe']
+
 autocmd FileType python setlocal completeopt-=preview
 
 " let g:SimpylFold_docstring_preview = 1
 " let g:SimpylFold_fold_docstring = 1
 " let g:SimpylFold_fold_import = 0
 
-set termguicolors
+" set termguicolors
 set background=dark
 " colorscheme gruvbox
-colorscheme base16-chalk
+" colorscheme base16-chalk
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " Vim backport
 set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
