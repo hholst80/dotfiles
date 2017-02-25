@@ -1,19 +1,17 @@
-XTerm*utf8: 1
-XTerm*locale: true
-*customization: -color
-XTerm*termName: xterm-256color
+! *customization: -color
 
-XTerm*metaSendsEscape: true
-XTerm*eightBitInput: false
-
-xterm*faceName: mononoki:size=11:antialias=true
-xterm*selectToClipboard: true
+xterm*cursorBlink: true
+xterm*cursorColor: white
+xterm*eightBitInput: false
+xterm*faceName: mono:size=20:antialias=true
+xterm*locale: true
+xterm*metaSendsEscape: true
+xterm*pointerColor: white
+xterm*pointerColorBackground: black
 xterm*savelines: 16384
-
-XTerm*pointerColor: white
-XTerm*pointerColorBackground: black
-XTerm*cursorColor: white
-XTerm*cursorBlink: true
+xterm*selectToClipboard: true
+xterm*termName: xterm-256color
+xterm*utf8: 1
 
 ! DOS-box colours...
 xterm*foreground: rgb:a8/a8/a8
@@ -39,4 +37,6 @@ XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
 
 // This one does not work for me.
-// *VT100*translations: #override Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
+xterm*VT100.translations: #override \
+	Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
