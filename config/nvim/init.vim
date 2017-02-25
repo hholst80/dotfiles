@@ -1,4 +1,14 @@
-" required packages:
+" 1) Install neovim following the instructions here:
+"
+" https://github.com/neovim/neovim/wiki/Installing-Neovim
+"
+" 2) Install vim-plug package manager:
+"
+" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
+" 3) Install required Python packages:
+"
 " pip install --upgrade neovim jedi
 
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
@@ -31,15 +41,17 @@ call plug#end()
 " let g:python3_host_prog = '/home/hholst/anaconda3/envs/tensorflow/bin/python3'
 
 let g:deoplete#enable_at_startup = 1
-
 let g:jedi#show_call_signatures = 2
+" let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
+let g:pymode_lint_checkers = ['pyflakes', 'mccabe']
+
 autocmd FileType python setlocal completeopt-=preview
 
 " let g:SimpylFold_docstring_preview = 1
 " let g:SimpylFold_fold_docstring = 1
 " let g:SimpylFold_fold_import = 0
 
-set termguicolors
+" set termguicolors
 set background=dark
 " colorscheme gruvbox
 " colorscheme base16-chalk
