@@ -51,7 +51,7 @@ autocmd FileType python setlocal completeopt-=preview
 " let g:SimpylFold_fold_docstring = 1
 " let g:SimpylFold_fold_import = 0
 
-" set termguicolors
+set termguicolors
 set background=dark
 " colorscheme gruvbox
 " colorscheme base16-chalk
