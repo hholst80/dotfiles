@@ -11,7 +11,7 @@ Plug 'zchee/deoplete-jedi'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'chriskempson/base16-vim'
 
 " Plug 'tmhedberg/SimpylFold'
@@ -42,7 +42,8 @@ autocmd FileType python setlocal completeopt-=preview
 set termguicolors
 set background=dark
 " colorscheme gruvbox
-colorscheme base16-chalk
+" colorscheme base16-chalk
+colorscheme solarized8_dark
 
 " Vim backport
 set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
