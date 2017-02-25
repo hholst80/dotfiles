@@ -3,7 +3,7 @@
 xterm*cursorBlink: true
 xterm*cursorColor: white
 xterm*eightBitInput: false
-xterm*faceName: mono:size=20:antialias=true
+xterm*faceName: ubuntu mono:size=16:antialias=true
 xterm*locale: true
 xterm*metaSendsEscape: true
 xterm*pointerColor: white
