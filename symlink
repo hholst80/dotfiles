@@ -3,9 +3,13 @@ DOTHOME="$(readlink -f `dirname $0`)"
 for FILE in profile bashrc gitconfig vimrc tmux.conf redshift.conf Xresources bash_aliases toprc config/nvim/* config/mc/*
 do
 	if ! test -f ${DOTHOME}/${FILE}; then
+		echo ${FILE} is removed from git repo - update $0
 		continue
 	fi
 	TARGET=${HOME}/.${FILE}
+	if test -f ${TARGET}; then
+		mv -v ${TARGET} ${TARGET}.bak
+	fi
 	if ! test -s ${TARGET}; then
 		mkdir -p $(dirname $TARGET)
 		ln -sfv ${DOTHOME}/${FILE} $TARGET
