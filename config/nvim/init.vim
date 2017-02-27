@@ -44,6 +44,7 @@ let g:deoplete#enable_at_startup = 1
 let g:jedi#show_call_signatures = 2
 " let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
 let g:pymode_lint_checkers = ['pyflakes', 'mccabe']
+let g:pymode_lint_ignore = "W0611"
 
 autocmd FileType python setlocal completeopt-=preview
 
