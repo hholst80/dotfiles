@@ -36,6 +36,7 @@ alias v=$EDITOR
 alias d=docker
 alias dm=docker-machine
 alias dc=docker-compose
+alias tks='tmux kill-session -t'
 # EA specifics
 alias tf="source activate tensorflow"
 alias Unity=/opt/Unity/Editor/Unity
@@ -79,3 +80,5 @@ then
 		source /usr/share/git-core/contrib/completion/git-prompt.sh
 	fi
 fi
+
+complete -C aws_completer aws
