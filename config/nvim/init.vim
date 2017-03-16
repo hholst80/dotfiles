@@ -85,7 +85,12 @@ autocmd FileType python setlocal textwidth=79
 
 " Keyboard mappings
 
+nmap <C-s> :w<CR>
+imap <C-s> <C-o>:w<CR>
+vmap <C-s> <Esc>:w<CR>gv
+
 nmap <silent> <leader>h :set hls!<cr>
 nnoremap <silent> <Leader>z :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
+nnoremap <M-q> :qall<CR>
 nnoremap <silent> <F10> :qall<CR>
 nnoremap Y y$
