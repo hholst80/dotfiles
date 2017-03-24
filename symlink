@@ -1,6 +1,6 @@
 #!/bin/sh
 DOTHOME="$(readlink -f `dirname $0`)"
-for FILE in profile bashrc gitconfig vimrc tmux.conf redshift.conf Xresources bash_aliases toprc config/nvim/* config/mc/*
+for FILE in profile bashrc gitconfig vimrc tmux.conf redshift.conf Xresources bash_aliases toprc config/*/*
 do
 	if ! test -f ${DOTHOME}/${FILE}; then
 		echo ${FILE} is removed from git repo - update $0
