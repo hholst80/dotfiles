@@ -163,3 +163,7 @@ bar {
 }
 
 exec i3-config-wizard
+
+for_window [class="Shutter"] floating enable
+for_window [class="Telegram"] floating enable
+for_window [title="src/client.py"] floating enable
