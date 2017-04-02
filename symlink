@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 DOTHOME="$(readlink -f `dirname $0`)"
 for FILE in profile bashrc gitconfig vimrc tmux.conf redshift.conf \
 	Xresources bash_aliases toprc bin/* config/*/*
@@ -7,7 +7,14 @@ do
 		echo ${FILE} is removed from git repo - update $0
 		continue
 	fi
-	TARGET=${HOME}/.${FILE}
+	case $FILE in
+	bin/*)
+		TARGET=${HOME}/${FILE}
+		;;
+	*)
+		TARGET=${HOME}/.${FILE}
+		;;
+	esac
 	if test -f ${TARGET}; then
 		mv -v ${TARGET} ${TARGET}.bak
 	fi
