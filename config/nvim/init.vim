@@ -21,7 +21,7 @@ Plug 'zchee/deoplete-jedi'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'chriskempson/base16-vim'
 
 " Plug 'tmhedberg/SimpylFold'
@@ -44,6 +44,7 @@ let g:deoplete#enable_at_startup = 1
 let g:jedi#show_call_signatures = 2
 " let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
 let g:pymode_lint_checkers = ['pyflakes', 'mccabe']
+let g:pymode_lint_ignore = "W0611"
 
 autocmd FileType python setlocal completeopt-=preview
 
@@ -51,12 +52,11 @@ autocmd FileType python setlocal completeopt-=preview
 " let g:SimpylFold_fold_docstring = 1
 " let g:SimpylFold_fold_import = 0
 
-" set termguicolors
+set termguicolors
 set background=dark
 " colorscheme gruvbox
 " colorscheme base16-chalk
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme solarized8_dark
 
 " Vim backport
 set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
@@ -76,6 +76,7 @@ let g:pymode_syntax = 0
 let g:pymode_lint_write = 1
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_python = 'python3'
 set completeopt-=preview
 
 autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2
@@ -84,7 +85,12 @@ autocmd FileType python setlocal textwidth=79
 
 " Keyboard mappings
 
+nmap <C-s> :w<CR>
+imap <C-s> <C-o>:w<CR>
+vmap <C-s> <Esc>:w<CR>gv
+
 nmap <silent> <leader>h :set hls!<cr>
 nnoremap <silent> <Leader>z :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'<CR>:set hls<CR>
+nnoremap <M-q> :qall<CR>
 nnoremap <silent> <F10> :qall<CR>
 nnoremap Y y$
