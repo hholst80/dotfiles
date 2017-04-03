@@ -16,6 +16,8 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+set -o vi
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -38,6 +40,7 @@ alias dm=docker-machine
 alias dc=docker-compose
 alias tks='tmux kill-session -t'
 # EA specifics
+alias m=machine
 alias tf="source activate tensorflow"
 alias Unity=/opt/Unity/Editor/Unity
 
