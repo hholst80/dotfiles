@@ -15,7 +15,10 @@ do
 		TARGET=${HOME}/.${FILE}
 		;;
 	esac
-	if test -f ${TARGET}; then
+	if test -L ${TARGET}.bak; then
+		rm -v ${TARGET}.bak
+	fi
+	if test \( -f ${TARGET} \) -a \( ! -L ${TARGET} \); then
 		mv -v ${TARGET} ${TARGET}.bak
 	fi
 	if ! test -s ${TARGET}; then
