@@ -1,7 +1,8 @@
 #!/bin/bash
+shopt -s globstar
 DOTHOME="$(readlink -f `dirname $0`)"
 for FILE in profile bashrc gitconfig vimrc tmux.conf redshift.conf \
-	Xresources bash_aliases toprc bin/* config/*/*
+	Xresources bash_aliases toprc bin/* config/**/* local/**/*.vim
 do
 	if ! test -f ${DOTHOME}/${FILE}; then
 		echo ${FILE} is removed from git repo - update $0
