@@ -157,6 +157,7 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Shift+i move scratchpad
 bindsym $mod+i scratchpad show
+bindsym $mod+t [class="Telegram"] exec "/home/holst/Documents/Telegram/Telegram"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
