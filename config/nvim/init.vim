@@ -32,7 +32,7 @@ Plug 'https://github.com/klen/python-mode'
 
 " statusbar
 Plug 'vim-airline/vim-airline'
-" Plug 'aim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
