@@ -66,7 +66,8 @@ function prompt_command() {
 	PS1+='\n\[\033[1m\]$\[\033[0m\] '
 }
 
-PROMPT_COMMAND="history -a;history -c;history -r;prompt_command"
+# PROMPT_COMMAND="history -a;history -c;history -r;prompt_command"
+PROMPT_COMMAND=prompt_command
 
 # Functions
 
