@@ -41,6 +41,7 @@ alias d=docker
 alias dm=docker-machine
 alias dc=docker-compose
 alias tks='tmux kill-session -t'
+alias mc='test $TERM == linux && \mc -S default || \mc'
 # EA specifics
 alias m=machine
 alias tf="source activate tensorflow"
