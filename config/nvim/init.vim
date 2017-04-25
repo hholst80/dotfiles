@@ -18,7 +18,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 
-Plug 'tpope/vim-fugitive.git'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " colorschemes
@@ -31,6 +31,8 @@ Plug 'chriskempson/base16-vim'
 
 Plug 'tpope/vim-unimpaired'
 Plug 'https://github.com/klen/python-mode'
+
+Plug 'scrooloose/nerdtree'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -100,3 +102,26 @@ nnoremap <silent> <Leader>z :let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
 nnoremap <M-q> :qall<CR>
 nnoremap <silent> <F10> :qall<CR>
 nnoremap Y y$
+
+if filereadable("/home/hholst/src/a3c-batch/.vimrc")
+	source /home/hholst/src/a3c-batch/.vimrc
+endif
+
+function! s:fzf_statusline()
+  " Override statusline as you like
+  highlight fzf1 ctermfg=161 ctermbg=251
+  highlight fzf2 ctermfg=23 ctermbg=251
+  highlight fzf3 ctermfg=237 ctermbg=251
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
+
+" NEDTree configuration
+
+nnoremap <C-N> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
