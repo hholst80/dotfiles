@@ -87,4 +87,8 @@ then
 	fi
 fi
 
+# Load additional plugins
+
 complete -C aws_completer aws
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

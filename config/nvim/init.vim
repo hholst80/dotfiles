@@ -15,9 +15,11 @@
 " call plug#begin('~/.vim/plugged')
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+
+Plug 'tpope/vim-fugitive.git'
+Plug 'airblade/vim-gitgutter'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
@@ -29,6 +31,9 @@ Plug 'chriskempson/base16-vim'
 
 Plug 'tpope/vim-unimpaired'
 Plug 'https://github.com/klen/python-mode'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " statusbar
 Plug 'vim-airline/vim-airline'
