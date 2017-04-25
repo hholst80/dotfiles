@@ -1,9 +1,19 @@
+! You will want to have the fonts installed from: https://github.com/powerline/fonts
+! git clone --depth=1 https://github.com/powerline/fonts ~/src/powerline-fonts
+!
+! !xrdb < %
+
 ! *customization: -color
 
 xterm*cursorBlink: true
 xterm*cursorColor: white
 xterm*eightBitInput: false
-xterm*faceName: ubuntu mono:size=16:antialias=true
+
+! xterm*faceName: xft:ubuntu mono:size=12:antialias=true
+! xterm*faceName: xft:Roboto Mono for Powerline Regular:size=10:antialias=false
+! xterm*faceName: xft:ProFont for Powerline:size=12:antialias=true
+xterm*faceName: xft:Ubuntu Mono derivative Powerline:size=11:antialias=true
+
 xterm*locale: true
 xterm*metaSendsEscape: true
 xterm*pointerColor: white
@@ -12,6 +22,17 @@ xterm*savelines: 16384
 xterm*selectToClipboard: true
 xterm*termName: xterm-256color
 xterm*utf8: 1
+
+! HDPI
+
+Xft.dpi: 192
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+! lcddefault
+Xft.hintstyle:  hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 
 ! DOS-box colours...
 xterm*foreground: rgb:a8/a8/a8
