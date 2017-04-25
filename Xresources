@@ -54,10 +54,13 @@ xterm*color13: rgb:fc/54/fc
 xterm*color14: rgb:54/fc/fc
 xterm*color15: rgb:fc/fc/fc
 
-XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+xterm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
 
 // This one does not work for me.
 xterm*VT100.translations: #override \
 	Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
 	Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+
+
+xterm*transparent: true
