@@ -19,6 +19,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+
 Plug 'airblade/vim-gitgutter'
 
 " colorschemes
@@ -29,17 +32,27 @@ Plug 'chriskempson/base16-vim'
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vim-scripts/jpythonfold.vim'
 
-Plug 'tpope/vim-unimpaired'
 Plug 'https://github.com/klen/python-mode'
 
 Plug 'scrooloose/nerdtree'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 
 " statusbar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Misc
+
+" Plug 'shinokada/dragvisuals.vim'
+" vmap  <expr>  <LEFT>   DVB_Drag('left')
+" vmap  <expr>  <RIGHT>  DVB_Drag('right')
+" vmap  <expr>  <DOWN>   DVB_Drag('down')
+" vmap  <expr>  <UP>     DVB_Drag('up')
+" vmap  <expr>  D        DVB_Duplicate()
+" Remove any introduced trailing whitespace after moving...
+" let g:DVB_TrimWS = 1
 
 " Initialize plugin system
 call plug#end()
@@ -64,7 +77,8 @@ set termguicolors
 set background=dark
 " colorscheme gruvbox
 " colorscheme base16-chalk
-colorscheme solarized8_dark
+" colorscheme solarized8_dark
+colorscheme base16-atelier-sulphurpool
 
 " Vim backport
 set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
