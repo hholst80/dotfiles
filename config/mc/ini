@@ -113,18 +113,12 @@ clipboard_paste=
 base_color=
 xterm-256color=
 color_terminals=
-
 xterm=
-
 linux=
-
 screen-256color=
-
 stterm-256color=
-
 rxvt-unicode-256color=
-
-rxvt-256color=
+screen=
 
 [Panels]
 show_mini_info=true

@@ -5,23 +5,38 @@
 
 ! *customization: -color
 
-xterm*cursorBlink: true
-xterm*cursorColor: white
-xterm*eightBitInput: false
+UXTerm*cursorBlink: true
+UXTerm*cursorColor: white
+! UXTerm*eightBitInput: true
 
-! xterm*faceName: xft:ubuntu mono:size=12:antialias=true
-! xterm*faceName: xft:Roboto Mono for Powerline Regular:size=10:antialias=false
-! xterm*faceName: xft:ProFont for Powerline:size=12:antialias=true
-xterm*faceName: xft:Ubuntu Mono derivative Powerline:size=11:antialias=true
+! UXTerm*faceName: xft:ubuntu mono:size=12:antialias=true
+! UXTerm*faceName: xft:Roboto Mono for Powerline Regular:size=10:antialias=false
+! UXTerm*faceName: xft:ProFont for Powerline:size=12:antialias=true
+! UXTerm*faceName: xft:Ubuntu Mono derivative Powerline Regular:size=11:antialias=true
+! UXTerm*faceName: xft:Source Code Pro for Powerline:size=10:antialias=true
+UXTerm*faceName: xft:Ubuntu Mono derivative Powerline Regular:size=10:antialias=true
 
-xterm*locale: true
-xterm*metaSendsEscape: true
-xterm*pointerColor: white
-xterm*pointerColorBackground: black
-xterm*savelines: 16384
-xterm*selectToClipboard: true
-xterm*termName: xterm-256color
-xterm*utf8: 1
+UXTerm*boldMode: false
+UXTerm*alwaysBoldMode: false
+UXTerm*allowBoldFonts: false
+
+! XTerm*font: xft:Ubuntu Mono derivative Powerline Regular:size=10:antialias=true
+! XTerm*boldFont: xft:Ubuntu Mono derivative Powerline Regular:size=10:antialias=true
+! XTerm*utf8Fonts.font: xft:Ubuntu Mono derivative Powerline Regular:size=10:antialias=true
+! XTerm*utf8Fonts.boldFont: xft:Ubuntu Mono derivative Powerline Regular:size=10:antialias=true
+
+
+
+
+UXTerm*locale: true
+UXTerm*metaSendsEscape: true
+UXTerm*pointerColor: white
+UXTerm*pointerColorBackground: black
+UXTerm*savelines: 16384
+UXTerm*selectToClipboard: true
+UXTerm*termName: xterm-256color
+! UXTerm*utf8: True
+! UXTerm*wideChars: True
 
 ! HDPI
 
@@ -35,30 +50,30 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 ! DOS-box colours...
-xterm*foreground: rgb:a8/a8/a8
-xterm*background: rgb:00/00/00
-xterm*color0: rgb:00/00/00
-xterm*color1: rgb:a8/00/00
-xterm*color2: rgb:00/a8/00
-xterm*color3: rgb:a8/54/00
-xterm*color4: rgb:00/00/a8
-xterm*color5: rgb:a8/00/a8
-xterm*color6: rgb:00/a8/a8
-xterm*color7: rgb:a8/a8/a8
-xterm*color8: rgb:54/54/54
-xterm*color9: rgb:fc/54/54
-xterm*color10: rgb:54/fc/54
-xterm*color11: rgb:fc/fc/54
-xterm*color12: rgb:54/54/fc
-xterm*color13: rgb:fc/54/fc
-xterm*color14: rgb:54/fc/fc
-xterm*color15: rgb:fc/fc/fc
+UXTerm*foreground: rgb:a8/a8/a8
+UXTerm*background: rgb:00/00/00
+UXTerm*color0: rgb:00/00/00
+UXTerm*color1: rgb:a8/00/00
+UXTerm*color2: rgb:00/a8/00
+UXTerm*color3: rgb:a8/54/00
+UXTerm*color4: rgb:00/00/a8
+UXTerm*color5: rgb:a8/00/a8
+UXTerm*color6: rgb:00/a8/a8
+UXTerm*color7: rgb:a8/a8/a8
+UXTerm*color8: rgb:54/54/54
+UXTerm*color9: rgb:fc/54/54
+UXTerm*color10: rgb:54/fc/54
+UXTerm*color11: rgb:fc/fc/54
+UXTerm*color12: rgb:54/54/fc
+UXTerm*color13: rgb:fc/54/fc
+UXTerm*color14: rgb:54/fc/fc
+UXTerm*color15: rgb:fc/fc/fc
 
 xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 xterm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
 
 // This one does not work for me.
-xterm*VT100.translations: #override \
+UXTerm*VT100.translations: #override \
 	Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
 	Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
 

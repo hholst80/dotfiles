@@ -1,5 +1,6 @@
 [user]
 	name = Henrik Holst
+	email = henrik.holst@ea.com
 [core]
 	editor = nvim
 [color]
