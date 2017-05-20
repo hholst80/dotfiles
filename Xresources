@@ -40,7 +40,7 @@ UXTerm*termName: xterm-256color
 
 ! HDPI
 
-Xft.dpi: 192
+Xft.dpi: 120
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 ! lcddefault
