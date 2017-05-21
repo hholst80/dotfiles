@@ -6,6 +6,8 @@
 	diff = auto
 	status = auto
 	branch = auto
+[column]
+    ui = auto
 [credential]
 	helper = cache
 [push]
