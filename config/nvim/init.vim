@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
 Plug 'chriskempson/base16-vim'
+Plug 'romainl/Apprentice'
 
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vim-scripts/jpythonfold.vim'
