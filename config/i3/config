@@ -31,7 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec --no-startup-id "stterm -f 'Ubuntu Mono derivative Powerline:size=32'"
+bindsym $mod+Return exec --no-startup-id "stterm -f 'Ubuntu Mono derivative Powerline:size=22'"
 
 # kill focused window
 bindsym $mod+q kill

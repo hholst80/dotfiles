@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
 Plug 'chriskempson/base16-vim'
+Plug 'romainl/Apprentice'
 
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'vim-scripts/jpythonfold.vim'
@@ -78,7 +79,8 @@ set background=dark
 " colorscheme gruvbox
 " colorscheme base16-chalk
 " colorscheme solarized8_dark
-colorscheme base16-atelier-sulphurpool
+" colorscheme base16-atelier-sulphurpool
+colorscheme apprentice
 
 " Vim backport
 set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
