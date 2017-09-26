@@ -29,11 +29,14 @@ Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
 Plug 'chriskempson/base16-vim'
 Plug 'romainl/Apprentice'
+Plug 'ciaranm/inkpot'
+Plug 'vim-scripts/xterm16.vim'
 
-" Plug 'tmhedberg/SimpylFold'
 " Plug 'vim-scripts/jpythonfold.vim'
 
-Plug 'https://github.com/klen/python-mode'
+" Plug 'klen/python-mode'
+Plug 'davidhalter/jedi-vim'
+Plug 'tmhedberg/SimpylFold'
 
 Plug 'scrooloose/nerdtree'
 
