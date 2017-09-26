@@ -45,6 +45,7 @@ alias mc='test $TERM == linux && \mc -S default || \mc'
 # EA specifics
 alias m=machine
 alias tf="source activate tensorflow"
+alias pm=pacman
 alias Unity=/opt/Unity/Editor/Unity
 
 # prompt
@@ -85,6 +86,14 @@ then
 	if test -f /usr/share/git-core/contrib/completion/git-prompt.sh
 	then
 		source /usr/share/git-core/contrib/completion/git-prompt.sh
+	fi
+	if test -f /usr/share/git/completion/git-completion.bash
+	then
+		source /usr/share/git/completion/git-completion.bash
+	fi
+	if test -f /usr/share/git/completion/git-prompt.sh
+	then
+		source /usr/share/git/completion/git-prompt.sh
 	fi
 fi
 

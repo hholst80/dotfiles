@@ -1,0 +1,12 @@
+Packages:
+
+base-devel
+
+bash-completion
+gvim
+xclip
+git
+neovim
+
+maim
+xdotool
