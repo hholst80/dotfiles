@@ -46,6 +46,7 @@ alias mc='test $TERM == linux && \mc -S default || \mc'
 alias m=machine
 alias tf="source activate tensorflow"
 alias pm=pacman
+alias z=zathura
 alias Unity=/opt/Unity/Editor/Unity
 
 # prompt
