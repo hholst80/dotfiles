@@ -17,6 +17,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'kien/ctrlp.vim'
+" Plug 'vim-syntastic/syntastic'
+
+let g:syntastic_ignore_files = ['\.py$']
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
