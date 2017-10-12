@@ -1,12 +1,45 @@
-Packages:
-
+# base
 base-devel
+sudo
+openssh
 
-bash-completion
+# x11
+nvidia
+xorg-xinit
+xorg-setxkbmap
+
+# network
+nss-mdns             # https://wiki.archlinux.org/index.php/Avahi
+                     # remember to enable with:  sudo systemctl enable avahi-daemon
+dhcp                 #                           sudo systemctl enable dhcpcd
+
+# programming
 gvim
-xclip
-git
 neovim
+git
 
-maim
-xdotool
+# window manager
+spectrwm
+scrot
+xclip
+rofi
+
+# desktop
+zathura
+
+# cli
+bash-completion
+rsync
+tmux
+mtr
+bmon
+mc
+
+# devops
+docker
+nvidia-docker
+
+# web
+google-chrome (aur)
+
+
