@@ -15,8 +15,10 @@
 " call plug#begin('~/.vim/plugged')
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
+if has('python3') && has('nvim')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'zchee/deoplete-jedi'
+endif
 Plug 'kien/ctrlp.vim'
 " Plug 'vim-syntastic/syntastic'
 
@@ -27,6 +29,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
 Plug 'airblade/vim-gitgutter'
+Plug 'cjrh/vim-conda'
+Plug 'majutsushi/tagbar'
 
 " colorschemes
 Plug 'morhetz/gruvbox'
@@ -35,6 +39,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'romainl/Apprentice'
 Plug 'ciaranm/inkpot'
 Plug 'vim-scripts/xterm16.vim'
+Plug 'flazz/vim-colorschemes'
 
 " Plug 'vim-scripts/jpythonfold.vim'
 
@@ -87,6 +92,7 @@ endif
 
 if has('gui')
 	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+	set guioptions-=T | set guioptions-=m
 endif
 
 set background=dark
@@ -122,6 +128,8 @@ autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal textwidth=79
 
 " Keyboard mappings
+
+nmap <F8> :TagbarToggle<CR>
 
 nmap <C-s> :w<CR>
 imap <C-s> <C-o>:w<CR>
