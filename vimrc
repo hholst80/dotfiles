@@ -84,6 +84,11 @@ autocmd FileType python setlocal completeopt-=preview
 if has('nvim')
 	set termguicolors
 endif
+
+if has('gui')
+	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+endif
+
 set background=dark
 " colorscheme gruvbox
 " colorscheme base16-chalk
@@ -96,9 +101,9 @@ set clipboard^=unnamed,unnamedplus      " http://bit.ly/1XzQyju
 set lazyredraw                          " Speed up redrawing.
 set cursorline
 set number
-set nolist
 set scrolloff=10
 set virtualedit=block
+set foldlevel=1
 
 " ===============
 " Pymode settings
@@ -128,10 +133,6 @@ nnoremap <M-q> :qall<CR>
 nnoremap <silent> <F10> :qall<CR>
 nnoremap Y y$
 
-if filereadable("/home/hholst/src/a3c-batch/.vimrc")
-	source /home/hholst/src/a3c-batch/.vimrc
-endif
-
 function! s:fzf_statusline()
   " Override statusline as you like
   highlight fzf1 ctermfg=161 ctermbg=251
@@ -150,3 +151,9 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" Curent projects specific hacks:
+
+if filereadable("/home/hholst/src/a3c-batch/.vimrc")
+	source /home/hholst/src/a3c-batch/.vimrc
+endif
