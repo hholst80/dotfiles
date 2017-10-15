@@ -165,3 +165,18 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 if filereadable("/home/hholst/src/a3c-batch/.vimrc")
 	source /home/hholst/src/a3c-batch/.vimrc
 endif
+"
+" set Vim-specific sequences for RGB colors
+" https://groups.google.com/forum/#!topic/vim_dev/JLp01xUC7v0
+
+if $TERM == 'screen-256color'
+	set termguicolors
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
+if $TERM == 'st-256color'
+	set termguicolors
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
