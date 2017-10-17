@@ -50,6 +50,8 @@ alias tf="source activate tensorflow"
 alias pm=pacman
 alias z=zathura
 alias Unity=/opt/Unity/Editor/Unity
+alias xed='xclip -o -selection clipboard > /tmp/ttt && vim /tmp/ttt && xclip -selection clipboard < /tmp/ttt && rm -f /tmp/ttt'
+alias xrun='echo set -x > /tmp/ttt && xclip -o -selection clipboard >> /tmp/ttt && vim /tmp/ttt && bash -s < /tmp/ttt; rm -f /tmp/ttt'
 
 # prompt
 
