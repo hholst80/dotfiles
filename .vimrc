@@ -34,8 +34,10 @@ else
 	colorscheme gruvbox
 end
 
+set foldlevelstart=0
 set termguicolors
 set updatetime=100
+
 set nomodeline
 set noshowmode
 
@@ -62,8 +64,6 @@ nnoremap <leader>q :wall<CR>:quit<CR>
 nnoremap <leader>r :source $HOME/.vimrc<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>t :terminal ++curwin<CR>
-
-set foldlevelstart=0
 
 " }}}
 " {{{ Autocommand groups
