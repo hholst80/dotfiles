@@ -1,12 +1,12 @@
+# shellcheck disable=SC2139
+
 alias less='less -S'
 alias y='yadm'
 
-alias build='docker-compose build'
-alias config='docker-compose config'
-alias down='docker-compose down'
-alias logs='docker-compose logs'
-alias pull='docker-compose pull'
-alias push='docker-compose push'
-alias up='docker-compose up'
+for what in build config down logs pull push up
+do
+	alias $what="docker-compose $what"
+	complete -F _docker_compose_${what} ${what}
+done
 
 alias tug='./tugboat'
