@@ -1,7 +1,7 @@
 [user]
 	name = Henrik Holst
 [core]
-	editor = nvim
+	editor = vim
 [color]
 	diff = auto
 	status = auto
@@ -17,16 +17,21 @@
 	br = branch
 	st = status
 	cp = cherry-pick
+	sm = submodule
 	last = log -1 HEAD
 	exec = "! "
 	root = rev-parse --show-toplevel
 [diff]
-    tool = nvimdiff
-[difftool "nvimdiff"]
-    cmd = nvim -d "$LOCAL" "$REMOTE"
+    tool = vimdiff
+[difftool "vimdiff"]
+    cmd = vim -d "$LOCAL" "$REMOTE"
 [merge]
   tool = vimdiff
 [mergetool]
   prompt = true
 [mergetool "vimdiff"]
-  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+  cmd = vim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[commit]
+	verbose = true
+[cola]
+	spellcheck = true
