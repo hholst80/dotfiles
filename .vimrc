@@ -23,11 +23,14 @@ call plug#end()
 " }}}
 " {{{ Settings
 
-if has('gui')
+if has('gui_running')
 	set guioptions-=m
 	set guioptions-=T
 	set guifont=Latin\ Modern\ Mono\ 12
 	set clipboard^=unnamed,unnamedplus
+	colorscheme gruvbox
+else
+	set background=dark
 	colorscheme gruvbox
 end
 
