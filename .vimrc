@@ -58,7 +58,7 @@ let g:lightline = {
 
 nnoremap <leader>b :TagbarToggle<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>q :wall<CR>:quit<CR>
+nnoremap <leader>q :confirm qall<CR>
 nnoremap <leader>r :source $HOME/.vimrc<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>t :terminal ++curwin<CR>
