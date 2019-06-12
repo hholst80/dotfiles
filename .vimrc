@@ -30,12 +30,14 @@ if has('gui_running')
 	set clipboard^=unnamed,unnamedplus
 	colorscheme gruvbox
 else
+	if has('nvim')
+		set termguicolors
+	end
 	set background=dark
 	colorscheme gruvbox
 end
 
 set foldlevelstart=0
-set termguicolors
 set updatetime=100
 
 set nomodeline
@@ -76,6 +78,11 @@ augroup END
 augroup vimrc
 	au!
 	au FileType vim setlocal fdm=marker foldlevel=0
+augroup END
+
+augroup tmux
+	au!
+	au FileType tmux setlocal fdm=marker foldlevel=0
 augroup END
 
 " }}}
