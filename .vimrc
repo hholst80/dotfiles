@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
+Plug 'jlanzarotta/bufexplorer'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
@@ -24,9 +25,10 @@ call plug#end()
 " {{{ Settings
 
 if has('gui_running')
-	set guioptions-=m
-	set guioptions-=T
+	set guiheadroom=0                        " Has no effect?
+	set guioptions=agit
 	set guifont=Latin\ Modern\ Mono\ 12
+	set background=light
 	colorscheme gruvbox
 else
 	if has('nvim')
@@ -44,6 +46,17 @@ set nomodeline
 set noshowmode
 
 " }}}
+" {{{ ALE configuration
+
+let g:ale_linters = {'python': ['pylint']}
+let g:ale_fixers = {'python': ['black', 'isort']}
+let g:ale_python_pylint_executable = 'pylint3'
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+set omnifunc=ale#completion#OmniFunc
+
+" }}}
 " {{{ Ack configuration
 
 if executable('ag')
@@ -53,14 +66,23 @@ endif
 " }}}
 " {{{ Lightline configuration
 
-let g:lightline = {
-	\ 'colorscheme': g:colors_name,
-	\ }
+if &t_Co != 8
+	let g:lightline = {'colorscheme': g:colors_name}
+endif
+
+" }}}
+" {{{ vim-gitgutter configuration
+
+"let g:gitgutter_git_args = '--git-dir=/home/holst/.yadm/repo.git'
+"let g:gitgutter_highlight_lines = 1
+"set signcolumn=yes
+"let g:gitgutter_log = 1
 
 " }}}
 " {{{ Maps
 
 nnoremap <leader>b :TagbarToggle<CR>
+nnoremap <leader>e :BufExplorer<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>q :confirm qall<CR>
 nnoremap <leader>r :source $HOME/.vimrc<CR>
@@ -72,7 +94,7 @@ nnoremap <leader>t :terminal ++curwin<CR>
 
 augroup yaml_indent
 	au!
-	au FileType yaml setlocal fdm=indent tabstop=2 shiftwidth=2
+	au FileType yaml setlocal fdm=indent foldlevel=1 tabstop=2 shiftwidth=2
 augroup END
 
 augroup vimrc
