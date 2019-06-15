@@ -27,7 +27,6 @@ if has('gui_running')
 	set guioptions-=m
 	set guioptions-=T
 	set guifont=Latin\ Modern\ Mono\ 12
-	set clipboard^=unnamed,unnamedplus
 	colorscheme gruvbox
 else
 	if has('nvim')
@@ -37,6 +36,7 @@ else
 	colorscheme gruvbox
 end
 
+set clipboard^=unnamed,unnamedplus
 set foldlevelstart=0
 set updatetime=100
 
