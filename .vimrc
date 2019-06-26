@@ -33,6 +33,12 @@ if has('gui_running')
 else
 	if has('nvim')
 		set termguicolors
+	elseif &t_Co == 256 && &term =~# '^xterm'
+		set termguicolors
+	elseif &t_Co == 256 && &term =~# '^\(screen\|tmux\)'
+		let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+		let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+		set termguicolors
 	end
 	set background=dark
 	colorscheme gruvbox
@@ -87,7 +93,11 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>q :confirm qall<CR>
 nnoremap <leader>r :source $HOME/.vimrc<CR>
 nnoremap <leader>s :w<CR>
-nnoremap <leader>t :terminal ++curwin<CR>
+if has('nvim')
+	nnoremap <leader>t :terminal<CR>i
+else
+	nnoremap <leader>t :terminal ++curwin<CR>
+endif
 
 " }}}
 " {{{ Autocommand groups
