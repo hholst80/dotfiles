@@ -45,16 +45,21 @@ set updatetime=100
 set nomodeline
 set noshowmode
 
+" {{{ ALE settings
+
+set omnifunc=ale#completion#OmniFunc
+
 " }}}
+
+" }}}
+" {{{ Plug-in configuration
+
 " {{{ ALE configuration
 
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {'python': ['pylint']}
 let g:ale_fixers = {'python': ['black', 'isort']}
 let g:ale_python_pylint_executable = 'pylint3'
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-set omnifunc=ale#completion#OmniFunc
 
 " }}}
 " {{{ Ack configuration
@@ -79,6 +84,7 @@ endif
 "let g:gitgutter_log = 1
 
 " }}}
+" }}}
 " {{{ Maps
 
 nnoremap <leader>b :TagbarToggle<CR>
@@ -88,6 +94,13 @@ nnoremap <leader>q :confirm qall<CR>
 nnoremap <leader>r :source $HOME/.vimrc<CR>
 nnoremap <leader>s :w<CR>
 nnoremap <leader>t :terminal ++curwin<CR>
+
+" {{{ ALE maps
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" }}}
 
 " }}}
 " {{{ Autocommand groups
@@ -105,6 +118,12 @@ augroup END
 augroup tmux
 	au!
 	au FileType tmux setlocal fdm=marker foldlevel=0
+augroup END
+
+augroup gitgutter
+	au!
+	"au FileType .* if expand("%:p:h") == "/home/holst" | let g:gitgutter_git_args = "--git-dir=/home/holst/.yadm/repo.git" | endif
+	"au BufLeave * let g:gitgutter_git_args = ""
 augroup END
 
 " }}}
