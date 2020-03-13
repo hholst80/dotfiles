@@ -4,4 +4,7 @@ for cmd in build config create down events exec help images \
            scale start stop top unpause up version 
   abbr --add ",$cmd" "docker-compose $cmd"
 end
-abbr --add ,ps 'docker ps --format "{{.Image|printf \"%-35v\"}}{{.Status|printf \"%-15v\"}}{{.Names|printf \"%25v\"}}"'
+function _docker_ps
+	docker ps --format "{{.Image|printf \"%-35v\"}}{{.Status|printf \"%-15v\"}}{{.Names|printf \"%25v\"}}"
+end
+bind \cp "watch -x fish -c _docker_ps; commandline -f repaint"
