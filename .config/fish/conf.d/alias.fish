@@ -5,3 +5,4 @@ for cmd in build config create down events exec help images \
   abbr --add ",$cmd" "docker-compose $cmd"
 end
 abbr --add ,ps 'docker ps --format "{{.Image|printf \"%-35v\"}}{{.Status|printf \"%-15v\"}}{{.Names|printf \"%25v\"}}"'
+git config --list | sed -n 's/^alias\.\(.*\)=\(.*\)$/abbr --add \1 "git \2"/p' | sed -n '/!/!p' | source
