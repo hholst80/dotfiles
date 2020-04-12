@@ -48,8 +48,10 @@ set clipboard^=unnamed,unnamedplus
 set foldlevelstart=0
 set updatetime=100
 
+set nojoinspaces
 set nomodeline
 set noshowmode
+set nowrap
 
 " {{{ ALE settings
 
