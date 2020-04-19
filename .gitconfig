@@ -1,8 +1,6 @@
 [user]
 	name = Henrik Holst
 	email = hholst80@users.noreply.github.com
-[core]
-	editor = vim
 [color]
 	diff = auto
 	status = auto
