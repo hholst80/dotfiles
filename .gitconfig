@@ -35,4 +35,4 @@
 [cola]
 	spellcheck = true
 [pull]
-	rebase = preserve
+	rebase = merges
