@@ -34,3 +34,5 @@
 	verbose = true
 [cola]
 	spellcheck = true
+[pull]
+	rebase = preserve
